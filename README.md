@@ -51,6 +51,8 @@ brew install --cask kory-/tap/prisma
 
 For each release, update `version` and `sha256` in `Casks/prisma.rb` to match the published Apple Silicon ZIP and `SHA256SUMS.txt`. Never point the cask at an unpublished local build. `brew livecheck --cask kory-/tap/prisma` includes published previews that have the matching app ZIP.
 
+The prerelease audit exception is limited to the current preview version in `audit_exceptions/github_prerelease_allowlist.json`. Update it when distributing another preview; remove it for a stable release.
+
 CI installs the checked-out cask on an Apple Silicon macOS runner, verifies the app metadata, architecture and ad-hoc signature integrity, and checks Homebrew style and online audits. It then uninstalls the app. It does not exercise audio capture or certify Apple notarization.
 
 Report app problems in [Prisma issues](https://github.com/kory-/prisma/issues); report installation problems in [this tap's issues](https://github.com/kory-/homebrew-tap/issues).
