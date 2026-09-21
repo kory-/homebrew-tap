@@ -48,6 +48,8 @@ jobs:
           print("Installed app matches cask version and platform requirements.")
           PY
       - name: Homebrew style and online audit
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
         run: |
           brew style --cask kory-/tap/prisma
           brew audit --cask --online kory-/tap/prisma
